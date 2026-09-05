@@ -2,6 +2,8 @@
   "name": "OrkanPoints - All-Country Mutual Fund Holding Point Comparison",
   "description": "Side-by-side comparison of brokerage holding point return rates across benchmark All-Country mutual funds for SBI, Rakuten, and Monex.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
 

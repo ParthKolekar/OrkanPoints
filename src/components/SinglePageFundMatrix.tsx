@@ -23,13 +23,11 @@ export const SinglePageFundMatrix: React.FC<SinglePageFundMatrixProps> = ({
   };
 
   // Helper to get sort score for a brokerage point:
-  // - If not offered: -1
+  // - If not handled (null): -1
   // - If offered with 0%: 0
   // - If offered with >0%: the point rate
   const getBrokerageSortScore = (fund: MutualFund, bId: BrokerageId): number => {
-    const point = fund.brokeragePoints[bId];
-    if (point.isOffered === false) return -1;
-    return point.pointPct;
+    return fund.brokeragePoints[bId].pointPct ?? -1;
   };
 
   // Sort funds

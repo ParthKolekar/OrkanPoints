@@ -7,9 +7,9 @@ interface FundMatrixRowProps {
 }
 
 export const FundMatrixRow: React.FC<FundMatrixRowProps> = ({ fund }) => {
-  const sbiRate = fund.brokeragePoints.sbi.isOffered !== false ? fund.brokeragePoints.sbi.pointPct : 0;
-  const rakutenRate = fund.brokeragePoints.rakuten.isOffered !== false ? fund.brokeragePoints.rakuten.pointPct : 0;
-  const monexRate = fund.brokeragePoints.monex.isOffered !== false ? fund.brokeragePoints.monex.pointPct : 0;
+  const sbiRate = fund.brokeragePoints.sbi.pointPct ?? 0;
+  const rakutenRate = fund.brokeragePoints.rakuten.pointPct ?? 0;
+  const monexRate = fund.brokeragePoints.monex.pointPct ?? 0;
 
   // Max holding point rate across the 3 brokerages for highlight
   const maxRate = Math.max(sbiRate, rakutenRate, monexRate);
